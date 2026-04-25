@@ -1,0 +1,23 @@
+<svg width="900" height="180" viewBox="0 0 900 180" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="180" fill="white"></rect>
+
+  <g fill="none" stroke="black" stroke-width="10" stroke-linecap="butt" stroke-linejoin="miter">
+
+    <!-- A -->
+    <path d="M90 130 L135 45 L180 130"></path>
+    <path d="M128 118 L135 105 L142 118 L135 131 Z" fill="black" stroke="none"></path>
+
+    <!-- Z -->
+    <path d="M285 55 H380 L295 130 H390"></path>
+
+    <!-- R -->
+    <path d="M500 130 V55 H570"></path>
+    <path d="M570 55 C615 55 615 100 570 100 H500"></path>
+    <path d="M555 100 L615 130"></path>
+
+    <!-- A -->
+    <path d="M720 130 L765 45 L810 130"></path>
+    <path d="M758 118 L765 105 L772 118 L765 131 Z" fill="black" stroke="none"></path>
+
+  </g>
+</svg>

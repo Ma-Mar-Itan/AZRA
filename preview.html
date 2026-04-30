@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AZRA Systems — Intelligence systems for strategic leverage.</title>
+    <meta
+      name="description"
+      content="AZRA Systems is a defense-focused artificial intelligence laboratory operating at the intersection of computational intelligence, economic systems, and strategic control."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              background: {
+                DEFAULT: "#0A0B0D",
+                elevated: "#101216",
+                panel: "#14171C",
+              },
+              foreground: {
+                DEFAULT: "#E8EAED",
+                muted: "#9AA0A6",
+                subtle: "#5F6368",
+              },
+              border: { DEFAULT: "#1E2228", strong: "#2A2F37" },
+              accent: {
+                silver: "#C0C7D1",
+                steel: "#7B8794",
+                signal: "#3B6FB2",
+                alert: "#A23E3E",
+              },
+            },
+            letterSpacing: { institutional: "0.18em" },
+            maxWidth: { container: "1280px", prose: "68ch" },
+          },
+        },
+      };
+    </script>
+    <style>
+      html,
+      body {
+        background: #0a0b0d;
+        color: #e8eaed;
+        font-family: "Inter", system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .font-mono {
+        font-family: "JetBrains Mono", ui-monospace, monospace;
+      }
+      .display {
+        font-family: "Inter", system-ui, sans-serif;
+        letter-spacing: -0.02em;
+      }
+      .display-xl {
+        font-size: clamp(3rem, 6vw, 5.5rem);
+        line-height: 1.05;
+      }
+      .display-lg {
+        font-size: clamp(2.25rem, 4.5vw, 4rem);
+        line-height: 1.08;
+      }
+      .display-md {
+        font-size: clamp(1.75rem, 3vw, 2.5rem);
+        line-height: 1.15;
+      }
+      .grid-bg {
+        background-image: linear-gradient(
+            to right,
+            rgba(154, 160, 166, 0.08) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(154, 160, 166, 0.08) 1px,
+            transparent 1px
+          );
+        background-size: 64px 64px;
+        opacity: 0.18;
+      }
+      ::selection {
+        background: #c0c7d1;
+        color: #0a0b0d;
+      }
+      a {
+        text-decoration: none;
+      }
+      .nav-link.active {
+        color: #e8eaed;
+      }
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0a0b0d;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #2a2f37;
+        border: 2px solid #0a0b0d;
+      }
+    </style>
+  </head>
+  <body class="bg-background text-foreground">
+    <!-- =========== Preview banner =========== -->
+    <div class="border-b border-border bg-background-elevated">
+      <div class="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-2 text-[10px] uppercase tracking-[0.18em] text-foreground-subtle sm:px-8 lg:px-12">
+        <span>Static preview · open with npm run dev for the live site</span>
+        <span>v1.0 / preview</span>
+      </div>
+    </div>
+
+    <!-- =========== Navbar =========== -->
+    <header class="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md">
+      <nav class="mx-auto flex h-16 w-full max-w-[1440px] items-center justify-between px-6 sm:px-8 lg:px-12">
+        <a href="#home" class="flex items-center gap-3">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M3 18 L8 4 L13 18" stroke="#E8EAED" stroke-width="1" />
+            <line x1="11" y1="3" x2="11" y2="19" stroke="#E8EAED" stroke-width="0.8" />
+            <path d="M9 18 L14 4 L19 18" stroke="#E8EAED" stroke-width="1" />
+          </svg>
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-muted">AZRA Systems</span>
+        </a>
+        <ul class="hidden items-center gap-1 md:flex">
+          <li><a href="#home" class="nav-link active px-3 py-2 font-mono text-[11px] uppercase tracking-[0.18em] hover:text-foreground">Home</a></li>
+          <li><a href="#capabilities" class="nav-link px-3 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-muted hover:text-foreground">Capabilities</a></li>
+          <li><a href="#systems" class="nav-link px-3 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-muted hover:text-foreground">Systems</a></li>
+          <li><a href="#doctrine" class="nav-link px-3 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-muted hover:text-foreground">Doctrine</a></li>
+          <li><a href="#research" class="nav-link px-3 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-muted hover:text-foreground">Research</a></li>
+          <li><a href="#about" class="nav-link px-3 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-muted hover:text-foreground">About</a></li>
+          <li><a href="#contact" class="nav-link px-3 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-muted hover:text-foreground">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- =========== Hero =========== -->
+      <section id="home" class="relative isolate overflow-hidden border-b border-border pt-32 pb-24 md:pt-40 md:pb-32">
+        <div aria-hidden class="grid-bg pointer-events-none absolute inset-0"></div>
+        <!-- Network graphic -->
+        <svg aria-hidden viewBox="0 0 600 400" class="pointer-events-none absolute -right-16 top-1/2 hidden h-[640px] w-[640px] -translate-y-1/2 opacity-[0.18] lg:block" style="color:#5F6368">
+          <g stroke="currentColor" stroke-width="0.5" opacity="0.5">
+            <line x1="120" y1="100" x2="300" y2="200" /><line x1="300" y1="200" x2="480" y2="120" />
+            <line x1="300" y1="200" x2="200" y2="300" /><line x1="300" y1="200" x2="420" y2="280" />
+            <line x1="300" y1="200" x2="500" y2="240" /><line x1="300" y1="200" x2="160" y2="220" />
+            <line x1="120" y1="100" x2="200" y2="160" /><line x1="480" y1="120" x2="500" y2="240" />
+            <line x1="200" y1="300" x2="420" y2="280" /><line x1="160" y1="220" x2="200" y2="300" />
+            <line x1="200" y1="160" x2="160" y2="220" /><line x1="420" y1="280" x2="500" y2="240" />
+          </g>
+          <circle cx="120" cy="100" r="2.5" fill="currentColor" opacity="0.7" />
+          <circle cx="480" cy="120" r="2.5" fill="currentColor" opacity="0.7" />
+          <circle cx="200" cy="300" r="2.5" fill="currentColor" opacity="0.7" />
+          <circle cx="420" cy="280" r="2.5" fill="currentColor" opacity="0.7" />
+          <circle cx="500" cy="240" r="2.5" fill="currentColor" opacity="0.7" />
+          <circle cx="160" cy="220" r="2.5" fill="currentColor" opacity="0.7" />
+          <circle cx="200" cy="160" r="2.5" fill="currentColor" opacity="0.7" />
+          <circle cx="300" cy="200" r="5" fill="currentColor" />
+          <circle cx="300" cy="200" r="14" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5" />
+          <circle cx="300" cy="200" r="26" fill="none" stroke="currentColor" stroke-width="0.3" opacity="0.3" />
+        </svg>
+        <div class="relative mx-auto w-full max-w-container px-6 sm:px-8 lg:px-12">
+          <div class="mb-10 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-muted">
+            <span class="block h-px w-8 bg-foreground-subtle"></span>
+            <span>AZRA / Systems Intelligence</span>
+          </div>
+          <h1 class="display display-xl max-w-5xl">
+            Intelligence systems for <span class="text-accent-silver">strategic leverage.</span>
+          </h1>
+          <p class="mt-8 max-w-2xl text-base leading-relaxed text-foreground-muted md:text-lg">
+            AZRA Systems builds modular intelligence systems that identify, model, and act upon high-leverage points within complex environments. Our work concentrates on economic and strategic systems intelligence, including system mapping, regime detection, simulation, counterfactual modeling, decision support, and structured monitoring.
+          </p>
+          <div class="mt-12 flex flex-wrap items-center gap-4">
+            <a href="#capabilities" class="inline-flex items-center justify-center gap-2 border border-foreground bg-foreground px-5 py-3 font-mono text-xs uppercase tracking-[0.18em] text-background transition-colors hover:bg-accent-silver hover:border-accent-silver">Capabilities</a>
+            <a href="#doctrine" class="inline-flex items-center justify-center gap-2 border border-border-strong bg-transparent px-5 py-3 font-mono text-xs uppercase tracking-[0.18em] text-foreground transition-colors hover:bg-background-elevated hover:border-foreground">Operating Doctrine</a>
+          </div>
+          <dl class="mt-20 grid grid-cols-2 gap-8 border-t border-border pt-8 md:grid-cols-4">
+            <div><dt class="font-mono text-[10px] uppercase tracking-[0.18em] text-foreground-subtle">Practice</dt><dd class="mt-2 text-sm">Defense AI Lab</dd></div>
+            <div><dt class="font-mono text-[10px] uppercase tracking-[0.18em] text-foreground-subtle">Domain</dt><dd class="mt-2 text-sm">Economic & Strategic Systems</dd></div>
+            <div><dt class="font-mono text-[10px] uppercase tracking-[0.18em] text-foreground-subtle">Method</dt><dd class="mt-2 text-sm">Structural Analysis</dd></div>
+            <div><dt class="font-mono text-[10px] uppercase tracking-[0.18em] text-foreground-subtle">Posture</dt><dd class="mt-2 text-sm">Selective Engagement</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- =========== Positioning =========== -->
+      <section class="border-b border-border py-24 md:py-32">
+        <div class="mx-auto w-full max-w-container px-6 sm:px-8 lg:px-12">
+          <div class="grid grid-cols-1 gap-12 md:grid-cols-12">
+            <div class="md:col-span-4"><span class="font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle">Positioning</span></div>
+            <div class="md:col-span-8">
+              <p class="display display-md">AZRA Systems is a defense-focused artificial intelligence laboratory operating at the intersection of computational intelligence, economic systems, and strategic control.</p>
+              <p class="mt-6 max-w-2xl text-base leading-relaxed text-foreground-muted">We build modular intelligence systems that identify, model, and act upon high-leverage points within complex environments. Our practice is selective, structurally focused, and deliberately restrained.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========== Core thesis =========== -->
+      <section class="relative overflow-hidden border-b border-border bg-background-elevated py-28 md:py-36">
+        <svg aria-hidden viewBox="0 0 600 240" class="pointer-events-none absolute inset-0 h-full w-full opacity-30" style="color:#5F6368">
+          <line x1="20" y1="220" x2="580" y2="220" stroke="currentColor" stroke-width="0.5" />
+          <line x1="20" y1="20" x2="20" y2="220" stroke="currentColor" stroke-width="0.5" />
+          <path d="M 20 160 L 80 158 L 140 162 L 200 159 L 260 161 L 320 160 L 380 159 L 440 162 L 500 158 L 560 160" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.45" />
+          <path d="M 20 130 L 80 128 L 140 132 L 200 120 L 260 80 L 320 95 L 380 110 L 440 126 L 500 124 L 560 128" fill="none" stroke="currentColor" stroke-width="1" opacity="0.85" />
+          <circle cx="260" cy="80" r="3" fill="currentColor" opacity="0.9" />
+          <line x1="260" y1="80" x2="260" y2="220" stroke="currentColor" stroke-width="0.4" stroke-dasharray="2 4" opacity="0.5" />
+        </svg>
+        <div class="relative mx-auto w-full max-w-container px-6 sm:px-8 lg:px-12">
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-muted">Core Thesis</span>
+          <h2 class="display display-lg mt-6 max-w-4xl">Modern conflict is increasingly decided in systems, not battlefields.</h2>
+          <p class="mt-8 max-w-2xl text-base leading-relaxed text-foreground-muted md:text-lg">Power, risk, and leverage now propagate through interconnected economic, informational, and infrastructural systems. The decisive question is no longer how much force can be applied, but where, when, and through which structural pathway. AZRA designs the analytical apparatus required to operate under that reality with precision.</p>
+        </div>
+      </section>
+
+      <!-- =========== Capabilities =========== -->
+      <section id="capabilities" class="border-b border-border py-24 md:py-32">
+        <div class="mx-auto w-full max-w-container px-6 sm:px-8 lg:px-12">
+          <header class="max-w-3xl">
+            <div class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-muted">
+              <span class="block h-px w-8 bg-foreground-subtle"></span><span>Capabilities</span>
+            </div>
+            <h2 class="display display-md mt-5">An analytical apparatus for structural environments.</h2>
+            <p class="mt-5 text-base leading-relaxed text-foreground-muted md:text-lg">Six interlocking capabilities, each built around a specific question senior decision-makers cannot afford to answer informally.</p>
+          </header>
+          <div class="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3" id="cap-grid"></div>
+        </div>
+      </section>
+
+      <!-- =========== Systems =========== -->
+      <section id="systems" class="border-b border-border py-24 md:py-32">
+        <div class="mx-auto w-full max-w-container px-6 sm:px-8 lg:px-12">
+          <header class="max-w-3xl">
+            <div class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-muted">
+              <span class="block h-px w-8 bg-foreground-subtle"></span><span>Systems Architecture</span>
+            </div>
+            <h2 class="display display-md mt-5">Modular systems, composed for context.</h2>
+            <p class="mt-5 text-base leading-relaxed text-foreground-muted md:text-lg">Each engagement composes a tailored stack from a controlled set of analytical modules — built, integrated, and audited internally.</p>
+          </header>
+          <ul class="mt-16 divide-y divide-border border-y border-border" id="sys-list"></ul>
+        </div>
+      </section>
+
+      <!-- =========== Doctrine =========== -->
+      <section id="doctrine" class="border-b border-border bg-background-elevated py-24 md:py-32">
+        <div class="mx-auto w-full max-w-container px-6 sm:px-8 lg:px-12">
+          <header class="max-w-3xl">
+            <div class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-muted">
+              <span class="block h-px w-8 bg-foreground-subtle"></span><span>Operating Doctrine</span>
+            </div>
+            <h2 class="display display-md mt-5">The doctrine that governs how the systems are used.</h2>
+            <p class="mt-5 text-base leading-relaxed text-foreground-muted md:text-lg">Six principles that constrain our practice, applied without exception across engagements.</p>
+          </header>
+          <div class="mt-16 grid grid-cols-1 gap-px bg-border sm:grid-cols-2 lg:grid-cols-4" id="doc-grid"></div>
+        </div>
+      </section>
+
+      <!-- =========== Research =========== -->
+      <section id="research" class="border-b border-border py-24 md:py-32">
+        <div class="mx-auto w-full max-w-container px-6 sm:px-8 lg:px-12">
+          <div class="grid grid-cols-1 gap-12 md:grid-cols-12">
+            <div class="md:col-span-5">
+              <div class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-muted">
+                <span class="block h-px w-8 bg-foreground-subtle"></span><span>Research</span>
+              </div>
+              <h2 class="display display-md mt-5">Disciplined methods. Auditable assumptions.</h2>
+              <p class="mt-5 text-base leading-relaxed text-foreground-muted md:text-lg">Our analytical core draws from quantitative disciplines with established standards for inference, validation, and uncertainty management.</p>
+            </div>
+            <div class="md:col-span-7">
+              <ul class="grid grid-cols-1 gap-px bg-border sm:grid-cols-2" id="res-grid"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========== About =========== -->
+      <section id="about" class="border-b border-border py-24 md:py-32">
+        <div class="mx-auto w-full max-w-container px-6 sm:px-8 lg:px-12">
+          <header class="max-w-3xl">
+            <div class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-muted">
+              <span class="block h-px w-8 bg-foreground-subtle"></span><span>About</span>
+            </div>
+            <h2 class="display display-md mt-5">A specialised analytical institution. Built for restraint.</h2>
+          </header>
+          <article class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-12">
+            <div class="md:col-span-3"><span class="font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle">§ 01 Mission</span></div>
+            <p class="md:col-span-9 max-w-prose text-base leading-relaxed text-foreground-muted md:text-lg">AZRA Systems exists to provide sovereign and institutional principals with the analytical apparatus required to operate, with discipline, in environments shaped by interconnected and adversarially-influenced systems.</p>
+          </article>
+          <article class="mt-12 grid grid-cols-1 gap-8 border-t border-border py-12 md:grid-cols-12 md:gap-12 md:py-16">
+            <div class="md:col-span-3"><span class="font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle">§ 02 Foundational Thesis</span></div>
+            <p class="md:col-span-9 max-w-prose text-base leading-relaxed text-foreground-muted md:text-lg">Modern conflict is increasingly decided in systems, not battlefields. Power, risk, and leverage propagate through economic, informational, and infrastructural structures. The decisive question is no longer how much force can be applied, but where, when, and through which structural pathway.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- =========== Contact / CTA =========== -->
+      <section id="contact" class="relative overflow-hidden bg-background-elevated">
+        <div aria-hidden class="grid-bg pointer-events-none absolute inset-0" style="background-size:96px 96px"></div>
+        <div class="relative mx-auto w-full max-w-container px-6 py-24 sm:px-8 md:py-32 lg:px-12">
+          <div class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-muted">
+            <span class="block h-px w-8 bg-foreground-subtle"></span><span>Engagement</span>
+          </div>
+          <h2 class="display display-md mt-6 max-w-3xl">Selective engagement. Defined scope. Auditable record.</h2>
+          <p class="mt-6 max-w-2xl text-base leading-relaxed text-foreground-muted md:text-lg">AZRA accepts a small number of structured engagements per cycle. Inquiries are reviewed institutionally.</p>
+          <div class="mt-10 flex flex-wrap items-center gap-4">
+            <a href="#" class="inline-flex items-center justify-center gap-2 border border-foreground bg-foreground px-5 py-3 font-mono text-xs uppercase tracking-[0.18em] text-background transition-colors hover:bg-accent-silver">Initiate Inquiry</a>
+            <a href="#about" class="inline-flex items-center justify-center gap-2 border border-border-strong bg-transparent px-5 py-3 font-mono text-xs uppercase tracking-[0.18em] text-foreground transition-colors hover:bg-background-elevated">About AZRA</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =========== Footer =========== -->
+    <footer class="border-t border-border bg-background">
+      <div class="mx-auto w-full max-w-container px-6 py-16 sm:px-8 lg:px-12">
+        <div class="grid grid-cols-1 gap-12 md:grid-cols-12">
+          <div class="md:col-span-5">
+            <p class="font-mono text-[11px] uppercase tracking-[0.18em]">AZRA Systems</p>
+            <p class="mt-6 max-w-sm text-sm leading-relaxed text-foreground-muted">Intelligence systems for strategic leverage.</p>
+            <p class="mt-3 max-w-sm text-xs leading-relaxed text-foreground-subtle">Restricted systems. Strategic environments.</p>
+          </div>
+          <div class="grid grid-cols-2 gap-8 md:col-span-7 md:grid-cols-3">
+            <div>
+              <h3 class="font-mono text-[10px] uppercase tracking-[0.18em] text-foreground-subtle">Practice</h3>
+              <ul class="mt-4 space-y-3">
+                <li><a class="text-sm text-foreground-muted hover:text-foreground" href="#capabilities">Capabilities</a></li>
+                <li><a class="text-sm text-foreground-muted hover:text-foreground" href="#systems">Systems</a></li>
+                <li><a class="text-sm text-foreground-muted hover:text-foreground" href="#doctrine">Doctrine</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-mono text-[10px] uppercase tracking-[0.18em] text-foreground-subtle">Institution</h3>
+              <ul class="mt-4 space-y-3">
+                <li><a class="text-sm text-foreground-muted hover:text-foreground" href="#research">Research</a></li>
+                <li><a class="text-sm text-foreground-muted hover:text-foreground" href="#about">About</a></li>
+                <li><a class="text-sm text-foreground-muted hover:text-foreground" href="#">Insights</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-mono text-[10px] uppercase tracking-[0.18em] text-foreground-subtle">Engage</h3>
+              <ul class="mt-4 space-y-3">
+                <li><a class="text-sm text-foreground-muted hover:text-foreground" href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mt-16 flex flex-col items-start justify-between gap-4 border-t border-border pt-8 text-xs text-foreground-subtle md:flex-row md:items-center">
+          <p>© <span id="year"></span> AZRA Systems. All rights reserved.</p>
+          <ul class="flex items-center gap-6">
+            <li><a class="hover:text-foreground-muted" href="#">Terms</a></li>
+            <li><a class="hover:text-foreground-muted" href="#">Privacy</a></li>
+            <li class="font-mono uppercase tracking-[0.18em]">v1.0</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Capabilities
+      const caps = [
+        { i: "01", t: "System Mapping", s: "Structural reconstruction of complex environments into navigable models of dependency, flow, and influence." },
+        { i: "02", t: "Regime Detection", s: "Statistical identification of structural transitions in economic, political, and operational systems." },
+        { i: "03", t: "Simulation & Counterfactual Modeling", s: "Structured exploration of alternative trajectories under specified interventions and assumptions." },
+        { i: "04", t: "Strategic Intervention Design", s: "Identification of minimum-leverage actions that produce maximum structural effect within a target system." },
+        { i: "05", t: "Monitoring Frameworks", s: "Continuous observation systems for early detection of structural change and adversarial behaviour." },
+        { i: "06", t: "Decision Support Systems", s: "Analytical interfaces that translate complex models into auditable input for senior decision-makers." },
+      ];
+      document.getElementById("cap-grid").innerHTML = caps
+        .map(
+          (c) => `
+        <div class="flex h-full flex-col border border-border bg-background-panel/40 p-8 transition-colors hover:border-border-strong hover:bg-background-panel/70">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle">${c.i}</span>
+            <span class="block h-px w-12 bg-border-strong"></span>
+          </div>
+          <h3 class="mt-6 display text-xl leading-tight md:text-2xl">${c.t}</h3>
+          <p class="mt-4 text-sm leading-relaxed text-foreground-muted">${c.s}</p>
+        </div>`
+        )
+        .join("");
+
+      // Systems
+      const sys = [
+        { i: "S-01", n: "Signal Extraction Systems", f: "Isolate structurally meaningful signals from high-volume, heterogeneous data environments where relevant information is sparse and adversarially obscured." },
+        { i: "S-02", n: "Decision Support Systems", f: "Translate model output into structured, auditable interfaces calibrated for senior decision-makers operating under time and information pressure." },
+        { i: "S-03", n: "Simulation Engines", f: "Run forward and counterfactual simulations of complex environments under explicit, auditable assumption sets." },
+        { i: "S-04", n: "Monitoring Frameworks", f: "Sustain continuous observation of strategic environments, surfacing structural change and adversarial behaviour as it emerges." },
+        { i: "S-05", n: "Strategic Assessment Modules", f: "Conduct structured analysis of adversarial systems, identifying dependencies, fragilities, and high-leverage points within explicit constraints." },
+      ];
+      document.getElementById("sys-list").innerHTML = sys
+        .map(
+          (s) => `
+        <li class="py-8 md:py-10">
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-12">
+            <div class="md:col-span-3">
+              <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle">${s.i}</span>
+              <h3 class="mt-2 display text-xl md:text-2xl">${s.n}</h3>
+            </div>
+            <p class="text-sm leading-relaxed text-foreground-muted md:col-span-9 md:text-base">${s.f}</p>
+          </div>
+        </li>`
+        )
+        .join("");
+
+      // Doctrine
+      const doc = [
+        { i: "I", t: "Indirect Dominance", d: "Decisive outcomes more often arise from structural position than from direct confrontation." },
+        { i: "II", t: "Precision Over Scale", d: "A small intervention applied to the correct point exceeds a large intervention applied imprecisely." },
+        { i: "III", t: "Timing as Advantage", d: "Most strategic value is created or destroyed by when an action is taken, not by what action is taken." },
+        { i: "IV", t: "Structural Thinking", d: "Behaviour is downstream of structure. Models that ignore structure mis-explain the past and mis-predict the future." },
+      ];
+      document.getElementById("doc-grid").innerHTML = doc
+        .map(
+          (p) => `
+        <div class="bg-background-elevated p-8">
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle">Principle ${p.i}</span>
+          <h3 class="mt-4 display text-lg leading-tight">${p.t}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-foreground-muted">${p.d}</p>
+        </div>`
+        )
+        .join("");
+
+      // Research
+      const res = [
+        { i: "R-01", t: "Applied Statistics" },
+        { i: "R-02", t: "Econometrics" },
+        { i: "R-03", t: "Machine Learning for Anomaly Detection" },
+        { i: "R-04", t: "Network Science" },
+      ];
+      document.getElementById("res-grid").innerHTML = res
+        .map(
+          (r) => `
+        <li class="bg-background p-6">
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle">${r.i}</span>
+          <p class="mt-3 display text-base">${r.t}</p>
+        </li>`
+        )
+        .join("");
+    </script>
+  </body>
+</html>
